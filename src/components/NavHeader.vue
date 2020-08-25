@@ -172,6 +172,7 @@ export default {
             text-align: center;
             background-color: $colorA;
             color: #ffffff;
+            margin-right: 0;
             .icon-cart{
               width: 16px;
               height: 12px;

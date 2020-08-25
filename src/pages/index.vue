@@ -10,7 +10,7 @@
                 <ul v-for="(item,index) in menuList" :key="index">
                   <li v-for="(sub,sindex) in item" :key="sindex">
                     <a :href="sub ? '/#/product'+sub.id :'/#/product/30'">
-                      <img :src="sub ? sub.img : '/imgs/item-box-1.png'">
+                      <img v-lazy="sub ? sub.img : '/imgs/item-box-1.png'">
                       {{sub ? sub.name : 'スマホ・仮'}}
                     </a>
                   </li>
@@ -53,7 +53,7 @@
       </div>
       <div class="ads-box">
         <a :href="'/#/product/'+item.id" v-for="(item,index) in adsList" :key="index">
-          <img :src="item.img">
+          <img v-lazy="item.img">
         </a>
       </div>
       <div class="banner">
@@ -74,12 +74,12 @@
               <div class="item" v-for="(item,sindex) in arr" :key="sindex">
                 <span :class="sindex%2===0 ? 'new':'hot'">{{sindex%2===0 ? 'new':'hot'}}</span>
                 <div class="item-img">
-                  <img :src="item.mainImage" alt="">
+                  <img v-lazy="item.mainImage" alt="">
                 </div>
                 <div class="item-info">
                   <h3>{{item.name}}</h3>
                   <p>{{item.subtitle}}</p>
-                  <p class="price">${{item.price}}</p>
+                  <p class="price" @click="addCart">${{item.price}}</p>
                 </div>
               </div>
             </div>
@@ -89,10 +89,12 @@
     </div>
     <servers-bar></servers-bar>
     <modal  title="Title"
-            btnType="1"
+            btnType="3"
             modalType="middle"
             sureText="www"
-            showModal="true">
+            :showModal="showModal"
+            @submit="goToCart"
+            @cancel="showModal=false">
       <template v-slot:body>
         <p>get it!</p>
       </template>
@@ -195,7 +197,8 @@ export default{
         }
       ],
       phoneList:[
-      ]
+      ],
+      showModal:false
     }
   },
   methods:{
@@ -208,6 +211,22 @@ export default{
       }).then((res)=>{
         this.phoneList = [res.list.slice(0,4),res.list.slice(4,8)]
       })
+    },
+    addCart(){
+      this.showModal=true
+      /*
+      this.axios.get('/carts',{
+        params:{
+          categoryId:id,
+          selected:true
+        }
+      }).then({
+
+      })
+      */
+    },
+    goToCart(){
+      this.$router.push('/cart')
     }
   },
   computed: {
