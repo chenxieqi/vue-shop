@@ -9,9 +9,10 @@
           <a href="javascript:;">仮３</a>
         </div>
         <div class="topbar-user">
-          <a href="javascript:;">ログイン</a>
-          <a href="javascript:;">登録</a>
-          <a href="javascript:;" class="my-cart"><span class="icon-cart"></span>買い物かご</a>
+          <a href="javascript:;" v-if="username">{{username}}</a>
+          <a href="javascript:;" v-if="username">マイオーダー</a>
+          <a href="/#/login" v-if="!username">ログイン</a>
+          <a href="javascript:;" class="my-cart"><span class="icon-cart"></span>買い物かご({{cartCount}})</a>
         </div>
       </div>
     </div>
@@ -111,13 +112,23 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
     name:'nav-header',
     data(){
       return {
-        username:'jack',
         productList:[]
       }
+    },
+    computed:{
+      /*
+      username(){
+        return this.$store.state.username
+      },
+      cartCount(){
+        return this.$store.state.cartCount
+      }*/
+      ...mapState(['username','cartCount'])
     },
     mounted(){
       this.getProductList()

@@ -6,15 +6,33 @@
 
 <script>
 //import storage from './storage'
+import { mapActions } from 'vuex'
 export default {
   name: 'App',
   components: {
   },
-  data(){
+  data() {
     return {
     }
   },
-  mounted(){
+  mounted() {
+    this.getUser()
+    this.getCartCount()
+  },
+  methods:{
+    getUser() {
+      this.axios.get('/user').then((res)=>{
+        //this.$store.dispatch('saveUserName',res.username)
+        this.saveUserName(res.username)
+      })
+    },
+    getCartCount() {
+      this.axios.get('/carts/products/sum').then((res) => {
+        //this.$store.dispatch('saveCartCount',res)
+        this.saveCartCount(res)
+      })
+    },
+    ...mapActions(['saveUserName','saveCartCount'])
   }
 }
 </script>
