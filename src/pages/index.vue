@@ -79,7 +79,7 @@
                 <div class="item-info">
                   <h3>{{item.name}}</h3>
                   <p>{{item.subtitle}}</p>
-                  <p class="price" @click="addCart">${{item.price}}</p>
+                  <p class="price" @click="addCart(item.id)">${{item.price}}</p>
                 </div>
               </div>
             </div>
@@ -87,11 +87,12 @@
         </div>
       </div>
     </div>
-    <servers-bar></servers-bar>
+    <service-bar></service-bar>
     <modal  title="Title"
             btnType="3"
             modalType="middle"
-            sureText="www"
+            sureText="買い物かごへ"
+            cancelText="買い物続きます"
             :showModal="showModal"
             @submit="goToCart"
             @cancel="showModal=false">
@@ -103,7 +104,7 @@
 </template>
 
 <script>
-import ServersBar from '../components/serversBar'
+import ServiceBar from '../components/ServiceBar'
 import Modal from '../components/modal'
 import { swiper, swiperSlide} from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
@@ -111,7 +112,7 @@ export default{
   components:{
     swiper,
     swiperSlide,
-    ServersBar,
+    ServiceBar,
     Modal
   },
   data(){
@@ -212,18 +213,15 @@ export default{
         this.phoneList = [res.list.slice(0,4),res.list.slice(4,8)]
       })
     },
-    addCart(){
+    addCart(id){
       this.showModal=true
-      /*
-      this.axios.get('/carts',{
-        params:{
-          categoryId:id,
-          selected:true
-        }
-      }).then({
 
+      this.axios.post('/carts',{
+        productId:id,
+        selected:true
+      }).then((res) => {
+        this.$store.dispatch('saveCartCount',res.cartTotalQuantity)
       })
-      */
     },
     goToCart(){
       this.$router.push('/cart')
