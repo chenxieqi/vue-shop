@@ -4,8 +4,18 @@ import axios from 'axios'
 import vueAxios from 'vue-axios'
 import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
+import { Message } from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import store from './store'
 import App from './App.vue'
+
+Vue.use(VueCookie)
+Vue.use(vueAxios,axios)
+Vue.use(VueLazyLoad,{
+  loading:'/imgs/loading-svg/loading-bars.svg'
+})
+Vue.config.productionTip = false
+Vue.prototype.$message = Message;
 
 const mock = false
 if (mock) {
@@ -26,17 +36,10 @@ axios.interceptors.response.use(function(response){
     //   return Promise.reject(res)
     // }
   } else {
-    alert(res.msg)
+    this.$message.warning(res.msg)
     return Promise.reject(res)
   }
 })
-
-Vue.use(VueCookie)
-Vue.use(vueAxios,axios)
-Vue.use(VueLazyLoad,{
-  loading:'/imgs/loading-svg/loading-bars.svg'
-})
-Vue.config.productionTip = false
 
 new Vue({
   store,

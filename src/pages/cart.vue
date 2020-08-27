@@ -89,15 +89,17 @@ export default {
       let quantity = item.quantity
       let selected = item.productSelected
       if(type === '-') {
-        if (quantity <= 0) {
-          alert('商品数は１以下になれません')
+        if (quantity <= 1) {
+          this.$message.warning('商品数は１以下になれません')
+        } else {
+          quantity--
         }
-        quantity--
       } else if (type === '+'){
         if(quantity > item.productStock) {
-          alert('商品数は在庫数を超えました')
+          this.$message.warning('商品数は在庫数を超えました')
+        } else {
+          quantity++
         }
-        quantity++
       } else {
         selected = !selected
       }
@@ -111,7 +113,7 @@ export default {
     // 商品削除
     delProduct(item){
       this.axios.delete(`/carts/${item.productId}`).then((res)=>{
-        alert('delete success');
+        this.$message.success('削除しました');
         this.renderAll(res);
       });
     },
@@ -119,7 +121,7 @@ export default {
     goToOrder() {
       let ifNoChecked = this.list.every(item => !item.productSelected)
       if(ifNoChecked) {
-        alert('会計する商品を選択してください')
+        this.$message.warning('会計する商品を選択してください')
       } else {
         this.$router.push('/order/confirm')
       }

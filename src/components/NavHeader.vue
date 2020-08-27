@@ -11,6 +11,7 @@
         <div class="topbar-user">
           <a href="javascript:;" v-if="username">{{username}}</a>
           <a href="javascript:;" v-if="username">マイオーダー</a>
+          <a href="javascript:;" v-if="username" @click="logout">ログアウト</a>
           <a href="/#/login" v-if="!username">ログイン</a>
           <a href="javascript:;" class="my-cart"><span class="icon-cart"></span>買い物かご({{cartCount}})</a>
         </div>
@@ -132,8 +133,13 @@ export default {
     },
     mounted(){
       this.getProductList()
+      let params = this.$route.params
+      if(params && params.from === 'login') {
+        this.getCartCount()
+      }
     },
     methods:{
+      // ゲット商品リスト
       getProductList(){
         this.axios.get('/products',{
           params:{
@@ -143,6 +149,21 @@ export default {
           if (res.list.length >= 6) {
             this.productList = res.list
           }
+        })
+      },
+      // ログアウト
+      logout() {
+        this.axios.post('/user/logout').then(() => {
+          this.$message.success('ログアウトしました')
+          this.$cookie.set('userId','',{expires:'-1'})
+          this.$store.dispatch('saveUserName','')
+          this.$store.dispatch('saveCartCount','0')
+        })
+      },
+      // ゲット買い物かご商品数
+      getCartCount() {
+        this.axios.get('/carts/products/sum').then((res=0) => {
+          this.$store.dispatch('saveCartCount',res)
         })
       }
     },
