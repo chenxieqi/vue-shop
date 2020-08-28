@@ -39,6 +39,10 @@ axios.interceptors.response.use(function(response){
     this.$message.warning(res.msg)
     return Promise.reject(res)
   }
+},(error)=>{
+  let res = error.response
+  this.$message.error(res.data.message)
+  return Promise.reject(res)
 })
 
 new Vue({
