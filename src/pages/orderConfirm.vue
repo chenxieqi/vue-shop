@@ -1,10 +1,10 @@
 <template>
-  <div></div>
+  <div class="order-confirm"></div>
 </template>
 
 <script>
 export default {
-    name:'order-footer'
+
 }
 </script>
 

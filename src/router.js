@@ -8,7 +8,7 @@ import Cart from './pages/cart'
 import Login from './pages/login'
 import Order from './pages/order'
 import OrderList from './pages/orderList'
-import OrderComfirm from './pages/orderComfirm'
+import OrderConfirm from './pages/orderConfirm'
 import OrderPay from './pages/orderPay'
 import Alipay from './pages/alipay'
 
@@ -60,9 +60,9 @@ export default new Router({
                     component:OrderList 
                 },
                 {
-                    path:'comfirm',
-                    name:'order-comfirm',
-                    component:OrderComfirm
+                    path:'confirm',
+                    name:'order-confirm',
+                    component:OrderConfirm
                 },
                 {
                     path:'pay',

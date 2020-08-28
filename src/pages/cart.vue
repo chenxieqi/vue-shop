@@ -39,7 +39,7 @@
           </div>
           <div class="total fr">
             合計<span>＄{{cartTotalPrice}}</span>
-            <a href="javascript:;" class="btn" @click="goToOrder">会計</a>
+            <a href="javascript:;" class="btn" @click="goToOrder">支払いへ</a>
           </div>
         </div>
       </div>
