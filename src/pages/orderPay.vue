@@ -1,5 +1,6 @@
 <template>
   <div class="order-pay">
+    <order-header :title="オーダー支払い"></order-header>
     <div class="wrapper">
       <div class="container">
         <div class="order-wrap">
@@ -61,6 +62,7 @@
   </div>
 </template>
 <script>
+import OrderHeader from './../components/OrderHeader'
 import Modal from './../components/modal'
 export default{
   name:'order-pay',
@@ -76,7 +78,8 @@ export default{
     }
   },
   components:{
-    Modal
+    Modal,
+    OrderHeader
   },
   mounted(){
     this.getOrderDetail();
