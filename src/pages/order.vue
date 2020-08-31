@@ -12,7 +12,6 @@ import NavFooter from './../components/NavFooter'
 export default {
   name:'Order-home',
   components:{
-    OrderHeader,
     ServiceBar,
     NavFooter
   }

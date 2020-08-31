@@ -10,7 +10,7 @@
         </div>
         <div class="topbar-user">
           <a href="javascript:;" v-if="username">{{username}}</a>
-          <a href="javascript:;" v-if="username">マイオーダー</a>
+          <a href="/#/order/list" v-if="username">マイオーダー</a>
           <a href="javascript:;" v-if="username" @click="logout">ログアウト</a>
           <a href="/#/login" v-if="!username">ログイン</a>
           <a href="javascript:;" class="my-cart"><span class="icon-cart"></span>買い物かご({{cartCount}})</a>
