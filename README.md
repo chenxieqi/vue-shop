@@ -1,39 +1,42 @@
-# vue-shop
+# know
 
+RESTful API
 
 ### 言語
 javascript
 
 ### フレームワーク
-Vue 2.6
-Vue-Cli 4.0
+Koa2
+
+### データベース
+mongodb
 
 ### プラグインなど
-scss
-elementUI
-axios
-lazyload
-vue-awesome-swiper
-
+"koa-jwt": "^4.0.0",
+"koa-parameter": "^3.0.1",
+"koa-router": "^9.4.0",
+"koa-static": "^5.0.0",
+"mongoose": "^5.10.3"
 
 ### 期間
 2週間
 
 ### 説明
-ECサイトのVueプロジェクト<br>
+Quoraを参考にした自作ウェブサイトKnowのバックエンドAPI<br>
+[github RESTful　API](https://developer.github.com/v3/#schema "github RESTful　API")を参考にしました
 
 実現した機能：<br>
-1.ホームページ<br>
-2.ユーザーログインログアウト<br>
-3.商品紹介（画像、ビデオ）<br>
-4.買い物かご画面<br>
-5.オーダーの支払い（Aliペイ）<br>
-6.オーダーリスト画面<br>
+1.ユーザーAPI<br>
+2.トピックAPI<br>
+3.質問API<br>
+4.答えAPI<br>
+5.コメントAPI<br>
 
-### プロジェクト画像
+### PostmanテストURL
+https://documenter.getpostman.com/view/5732484/TVK5eMhB
 
-（編集中）
-
+### デプロイ
+ AWS EC2
 
 
 ## Project setup
