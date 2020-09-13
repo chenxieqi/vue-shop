@@ -8,17 +8,17 @@ javascript
 Vue2.0
 
 ### プラグインなど
-    "axios": "^0.20.0",<br>
-    "vuex": "^3.5.1"<br>
-    "mockjs": "^1.1.0",<br>
-    "node-sass": "^4.14.1",<br>
-    "sass-loader": "^9.0.3",<br>
-    "vue-awesome-swiper": "^3.1.3",<br>
-    "vue-axios": "^2.1.5",<br>
-    "vue-cli-plugin-axios": "0.0.4",<br>
-    "vue-cookie": "^1.1.4",<br>
-    "vue-lazyload": "^1.3.3",<br>
-    "vue-template-compiler": "^2.6.11"<br>
+    "axios": "^0.20.0"
+    "vuex": "^3.5.1"
+    "mockjs": "^1.1.0"
+    "node-sass": "^4.14.1"
+    "sass-loader": "^9.0.3"
+    "vue-awesome-swiper": "^3.1.3"
+    "vue-axios": "^2.1.5"
+    "vue-cli-plugin-axios": "0.0.4"
+    "vue-cookie": "^1.1.4"
+    "vue-lazyload": "^1.3.3"
+    "vue-template-compiler": "^2.6.11"
 
 ### 期間
 2週間
