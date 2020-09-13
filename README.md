@@ -24,7 +24,7 @@ Vue2.0
 2週間
 
 ## 説明
-[MIのECサイト](https://www.mi.com/us "MIのECサイト")を参考にした自作ECサイト<br>
+[MIのECサイト](https://www.mi.com/us "MIのECサイト")を参考にした自作ECサイトのフロントエンド部分<br>
 バックエンドAPIは中国友人が提供しました<br>
 
 ### 実現した機能：<br>
