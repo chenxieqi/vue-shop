@@ -13,7 +13,7 @@
           <a href="/#/order/list" v-if="username">マイオーダー</a>
           <a href="javascript:;" v-if="username" @click="logout">ログアウト</a>
           <a href="/#/login" v-if="!username">ログイン</a>
-          <a href="javascript:;" class="my-cart"><span class="icon-cart"></span>買い物かご({{cartCount}})</a>
+          <a href="/#/cart" class="my-cart"><span class="icon-cart"></span>買い物かご({{cartCount}})</a>
         </div>
       </div>
     </div>
