@@ -39,7 +39,7 @@ Vue2.0
 
 ### 画像
 <br>
-
+![homepage](https://gyazo.com/98d0748d9f9c57088044d04438a557f1 "home")
 
 
 
