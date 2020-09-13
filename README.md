@@ -25,6 +25,7 @@ Vue2.0
 
 ## 説明
 [MIのECサイト](https://www.mi.com/us "MIのECサイト")を参考にした自作ECサイト<br>
+バックエンドAPIは中国友人が提供しました<br>
 
 ### 実現した機能：<br>
 1.ユーザー登録機能<br>
@@ -38,10 +39,20 @@ Vue2.0
 
 
 ### 画像
-<br>
 
-[homepage](https://gyazo.com/98d0748d9f9c57088044d04438a557f1 "home")
+[ホームページ1](https://gyazo.com/98d0748d9f9c57088044d04438a557f1 "home")
 
+[ホームページ2](https://gyazo.com/0a3ec34abc2fafc2c47f17d4f1c76b94 "home")
+
+[ホームページ3](https://gyazo.com/2410017eb46975f6570aba17856b7320 "home")
+
+[ログイン](https://gyazo.com/ea81f4bc97ffb57025e0f41cf91e4af4 "login")
+
+[買い物かご](https://gyazo.com/06b06c5917e335df9a8411739096aed6 "cart")
+
+[支払い画面](https://gyazo.com/f6255b4144068bd4816f3fe6b36368d3 "pay")
+
+[オーダーリスト](https://gyazo.com/b1597fbb40bb52805c9c5c03552a8533 "orderList")
 
 
 ## Project setup
