@@ -24,7 +24,7 @@ Vue2.0
 2週間
 
 ## 説明
-[MIのECサイト]（"https://www.mi.com/us" "MIのECサイト"）を参考にした自作ECサイト<br>
+[MIのECサイト](https://www.mi.com/us "MIのECサイト")を参考にした自作ECサイト<br>
 
 ### 実現した機能：<br>
 1.ユーザー登録機能<br>
@@ -40,6 +40,7 @@ Vue2.0
 ### 画像
 <br>
 
+[homepage](https://gyazo.com/98d0748d9f9c57088044d04438a557f1 "home")
 
 
 
