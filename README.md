@@ -1,42 +1,46 @@
-# know
+# vue-shop
 
-RESTful API
 
 ### 言語
 javascript
 
 ### フレームワーク
-Koa2
-
-### データベース
-mongodb
+Vue2.0
 
 ### プラグインなど
-"koa-jwt": "^4.0.0",
-"koa-parameter": "^3.0.1",
-"koa-router": "^9.4.0",
-"koa-static": "^5.0.0",
-"mongoose": "^5.10.3"
+    "axios": "^0.20.0",<br>
+    "vuex": "^3.5.1"<br>
+    "mockjs": "^1.1.0",<br>
+    "node-sass": "^4.14.1",<br>
+    "sass-loader": "^9.0.3",<br>
+    "vue-awesome-swiper": "^3.1.3",<br>
+    "vue-axios": "^2.1.5",<br>
+    "vue-cli-plugin-axios": "0.0.4",<br>
+    "vue-cookie": "^1.1.4",<br>
+    "vue-lazyload": "^1.3.3",<br>
+    "vue-template-compiler": "^2.6.11"<br>
 
 ### 期間
 2週間
 
 ### 説明
-Quoraを参考にした自作ウェブサイトKnowのバックエンドAPI<br>
-[github RESTful　API](https://developer.github.com/v3/#schema "github RESTful　API")を参考にしました
+[MIのECサイト]（"https://www.mi.com/us" "MIのECサイト"）を参考にした自作ECサイト<br>
 
-実現した機能：<br>
-1.ユーザーAPI<br>
-2.トピックAPI<br>
-3.質問API<br>
-4.答えAPI<br>
-5.コメントAPI<br>
+## 実現した機能：<br>
+1.ユーザー登録機能<br>
+2.ホーム画面<br>
+3.商品画面<br>
+4.支払い画面<br>
+5.購入した商品リスト画面<br>
+5.電子決済（AliPay）機能<br>
+5.画像Lazyload機能<br>
+5.バックエンドAPIと繋げてデータを取り出す機能<br>
 
-### PostmanテストURL
-https://documenter.getpostman.com/view/5732484/TVK5eMhB
 
-### デプロイ
- AWS EC2
+### 画像
+
+
+
 
 
 ## Project setup
